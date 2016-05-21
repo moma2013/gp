@@ -1,0 +1,36 @@
+<style>
+    .item-select select
+{
+    right: auto;
+    direction: ltr;
+}
+</style>
+<ion-header-bar style="background-color: #20BF9F;" class="bar bar-header bar-light">
+    <h1 class="title">إضافة عضو</h1>
+</ion-header-bar>
+<div style="height: 30px;"></div>
+<form novalidate name="myForm1" ng-submit='submitted = true;
+        submit(myForm1.$valid, personal_data)'>
+    <div class="list list-inset">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label" style="padding: 20px; font-weight: bold;">الاسم </span>
+            <input type="text" name="fullname" ng-model="personal_data.fullname" placeholder="ادخل الاسم" required/>
+        </label>
+        <span ng-if="myForm1.fullname.$error.required && submitted" style="color:red;">من فضلك ادخل الاسم</span>
+        <label class="item item-input item-select ">
+            <span class="col-offset-10 input-label" style="padding: 20px; font-weight: bold;" > درجة القرابة</span>
+
+            <select class="pull-left">
+                <option selected>أب</option>
+                <option >أم</option>
+                <option>أبناء</option>
+                <option>زوج/زوجة</option>
+            </select>
+        </label>
+        <span ng-if="myForm1.lname.$error.required && submitted" style="color:red;">حدد درجة القرابة</span>
+        <br>
+        <button class="button button-full" style="background-color: #20BF9F;"> أختر ملف </button>
+        <button class="button button-full" style="background-color: #20BF9F;"> أختر صورة </button>
+
+    </div>
+</form>

@@ -1,0 +1,141 @@
+<ion-view view-title={{service.title}}>
+    <ion-content>
+        <div ng-show="{{service.id}}== 1">
+            التحويلات 
+        </div>
+        <div ng-show="{{service.id}}== 2">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label" style="padding: 20px; font-weight: bold;">تم التسديد </span>
+                    <input type="text" value="1/1/2016" style="padding: 20px;" readonly>
+                </label>
+                <div class="row header">
+                    <div class="col-10" style="padding: 5px;">م</div>
+                    <div class="col-40" style="padding: 5px;">اسم القريب</div>
+                    <div class="col">درجة القرابة</div>
+                    <div class="col">تم دفع</div>
+                </div>
+                <div class="row">
+                    <div class="col-10" style="padding: 5px;">1</div>
+                    <div class="col-40" style="padding: 5px;">محمد احمد عبدالله</div>
+                    <div class="col">زوج</div>
+                    <div class="col">1/11/2015</div>
+                </div>
+                <div class="row" ng-repeat="data in ctrl.data">
+                    <div class="col-10" style="padding: 5px;">{{data.id}}</div>
+                    <div class="col-40" style="padding: 5px;">{{data.code}}</div>
+                    <div class="col">{{data.limit}}</div>
+                    <div class="col">{{data.account}}</div>
+                </div>
+                <div style="height: 10px;"></div>
+                <div class="row">
+                    <div class="col bb"></div>
+                    <a style="background-color: #20BF9F;" ui-sref="app.add" class="button col-34 button button-small button-positive icon ion-plus icon-left">
+                        اضافة عضو
+                    </a>
+                    <div class="col-10 bb"></div>
+                    <a style="background-color: #20BF9F;" class="button col-34 button button-small button-positive icon ion-plus icon-left">
+                        دفع الرسوم
+                    </a>
+                    <div class="col bb"></div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="{{service.id}}== 3">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">رقم العضوية</span>
+                    <input type="text">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">رقم البطاقة</span>
+                    <input type="text">
+                </label>
+                <div style="height: 20px;"></div>
+                <div class="row">
+                    <button style="background-color: #20BF9F;" class=" col button button-positive">
+                        دفع الرسوم
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div ng-show="{{service.id}}== 4">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label" style="padding: 20px; font-weight: bold;">باقي الاشاعات و التحاليل </span>
+                    <input type="text" value="500" style="padding: 20px;" readonly>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label" style="padding: 20px; font-weight: bold;">باقي العمليات </span>
+                    <input type="text" value="500" style="padding: 20px;" readonly>
+                </label>
+                <div style="height: 20px;"></div>
+                <div class="row header">
+                    <div class="col-10" style="padding: 5px;">م</div>
+                    <div class="col">النوع</div>
+                    <div class="col-40" style="padding: 5px;">الوصف</div>
+                    <div class="col">التاريخ</div>
+                </div>
+                <div class="row">
+                    <div class="col-10" style="padding: 5px;">1</div>
+                    <div class="col">تحليل</div>
+                    <div class="col-40" style="padding: 5px;">سكر</div>
+                    <div class="col">1/11/2015</div>
+                </div>
+                <div class="row" ng-repeat="data in ctrl.data">
+                    <div class="col-10">{{data.id}}</div>
+                    <div class="col">{{data.code}}</div>
+                    <div class="col-10" style="padding: 5px;">{{data.limit}}</div>
+                    <div class="col">{{data.account}}</div>
+                </div>
+                <div style="height: 10px;"></div>
+            </div>
+
+        </div>
+        <div ng-show="{{service.id}}== 5">
+            <div class="tabs tabs-top tabs-dark tabs-icon-top static" style="background-color:#20BF9F ;">
+                <a class="tab-item" ng-href="#/complaint/1">
+                    <i class="icon ion-arrow-graph-up-right"></i> مستشفى
+                </a>
+                <a  ng-href="#/complaint/2" class="tab-item">
+                    <i class="icon ion-arrow-graph-up-right"></i> معمل
+                </a>
+                <a  ng-href="#/complaint/3" class="tab-item">
+                    <i class="icon ion-android-people"></i> طبيب
+                </a>
+
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>
+<style>
+    body {
+        cursor: url('http://ionicframework.com/img/finger.png'), auto;
+    }
+
+    .header .col ,.header .col-10,.header .col-40 {
+        background-color:lightgrey;
+    }
+
+    .col , .col-10 , .col-40{
+        border: solid 1px grey;
+        border-bottom-style: none;
+        border-right-style: solid 1px grey;
+    }
+
+    .col:last-child {
+        border-right: solid 1px grey;
+    }
+
+    .col,.col-10,.col-40 {
+        border-bottom: solid 1px grey;
+    }
+    .bb{
+        border: none;
+        border-right-left: none;
+    }
+</style>

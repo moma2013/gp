@@ -1,0 +1,91 @@
+<ion-view view-title={{extraService.title}}>
+    <ion-content>
+        <div ng-show="{{extraService.id}}== 1">
+            <h1>حجز دكتور</h1>
+        </div>
+        <div ng-show="{{extraService.id}}== 2">
+            <h1>مواعيدي</h1>
+        </div>
+        <div ng-show="{{extraService.id}}== 3">
+            <h1>الأطباء المفضلين</h1>
+        </div>
+        <div ng-show="{{extraService.id}}== 4">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label" style="padding: 20px; font-weight: bold;">إضافة دواء</span>
+                    <input type="text" placeholder="اضف الميعاد" style="padding: 20px;">
+                </label>
+                <div style="height: 30px;"></div>
+                <div class="row header">
+                    <div class="col-10" style="padding: 5px;">م</div>
+                    <div class="col" style="padding: 5px;">اسم الدواء</div>
+                    <div class="col">الميعاد</div>
+                    <div class="col-34"></div>
+                </div>
+                <div class="row">
+                    <div class="col-10" style="padding: 5px;">1</div>
+                    <div class="col" style="padding: 5px;">دواء برد</div>
+                     <div class="col">
+                    <div class="row">
+                        <label class="col-50 checkbox">
+                            <input type="checkbox" style="right: 15px;">
+                        </label>
+                        <p class="col-50" style="padding-top: 10px;">5:00</p>
+                    </div>
+                     </div>
+                    <div class="col-34">
+                        <div class="row">
+                           <button style="background-color: #20BF9F;" class="col button button-small button-positive">
+                            تعديل
+                        </button>
+                        <div class="col-10 bb"></div>
+                        <button style="background-color: #20BF9F;" class="col button button-small button-positive">
+                            حذف
+                        </button> 
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row" ng-repeat="data in ctrl.data">
+                    <div class="col-10" style="padding: 5px;">{{data.id}}</div>
+                    <div class="col" style="padding: 5px;">{{data.code}}</div>
+                    <div class="col">{{data.limit}}</div>
+                    <div class="col-34">{{data.account}}</div>
+                </div>
+                <div style="height: 10px;"></div>
+            </div>
+        </div>
+
+
+    </ion-content>
+
+</ion-view>
+
+
+<style>
+    body {
+        cursor: url('http://ionicframework.com/img/finger.png'), auto;
+    }
+
+    .header .col ,.header .col-10,.header .col-34 {
+        background-color:lightgrey;
+    }
+
+    .col , .col-10 , .col-34{
+        border: solid 1px grey;
+        border-bottom-style: none;
+        border-right-style: solid 1px grey;
+    }
+
+    .col:last-child {
+        border-right: solid 1px grey;
+    }
+
+    .col,.col-10,.col-34 {
+        border-bottom: solid 1px grey;
+    }
+    .bb{
+        border: none;
+        border-right-left: none;
+    }
+</style>

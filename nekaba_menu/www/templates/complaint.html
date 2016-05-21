@@ -1,0 +1,110 @@
+<ion-view view-title={{complaint.title}}>
+    <ion-content>
+        <div class="row">
+            <div class="tabs tabs-striped tabs-top tabs-dark tabs-icon-top " style="top: 0px; background-color:#20BF9F ;">
+                <a class="tab-item" ng-href="#/complaint/1">
+                    <i class="icon ion-arrow-graph-up-right"></i> مستشفى
+                </a>
+                <a  ng-href="#/complaint/2" class="tab-item">
+                    <i class="icon ion-arrow-graph-up-right"></i> معمل
+                </a>
+                <a  ng-href="#/complaint/3" class="tab-item">
+                    <i class="icon ion-android-people"></i> طبيب
+                </a>
+
+            </div>
+        </div>
+        <!--            <div class="tabs tabs-top tabs-dark tabs-icon-top static" style="background-color:#20BF9F ;">
+                        <a ui-sref="app.activity" class="tab-item" href="#/app/services/complaint/1">
+                            <i class="icon ion-arrow-graph-up-right"></i> مستشفى
+                        </a>
+                        <a ui-sref="app.activity" class="tab-item">
+                            <i class="icon ion-arrow-graph-up-right"></i> معمل
+                        </a>
+                        <a ui-sref="app.friends" class="tab-item">
+                            <i class="icon ion-android-people"></i> طبيب
+                        </a>
+                    </div>-->
+        <div style=" margin-top: 50px; ">
+
+            <form novalidate name="hospitalForm" ng-submit='submitted = true;
+                        submit(hospitalForm.$valid, personal_data)'>               
+
+                <div ng-show="{{complaint.id}}== 1" class="list list-inset">
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label" style="padding: 10px;">اسم المستشفى</span>
+                            <input type="text" placeholder="ادخل الاسم">
+                        </label>
+                        <label class="item item-input item-stacked-label" style="padding: 10px;">
+                            <span class="input-label">رقم الكشف</span>
+                            <input type="text" placeholder="ادخل رقم الكشف">
+                        </label>
+                        <label class="item item-input item-stacked-label"  style="padding: 10px;">
+                            <span class="input-label">محتوى الشكوى</span>
+                            <textarea type="text" rows="10"></textarea>
+                        </label>
+                    </div>
+                    
+                    <button class="button button-full" style="background-color: #20BF9F;"> مرفقات </button>
+                    <button class="button button-full" style="background-color: #20BF9F;"> ارسال </button>
+                </div>
+                
+                <div ng-show="{{complaint.id}}== 2" class="list list-inset">
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label" style="padding: 10px;">اسم المعمل</span>
+                            <input type="text" placeholder="ادخل الاسم">
+                        </label>
+                        <label class="item item-input item-stacked-label" style="padding: 10px;">
+                            <span class="input-label">رقم الكشف</span>
+                            <input type="text" placeholder="ادخل رقم الكشف">
+                        </label>
+                        <label class="item item-input item-stacked-label"  style="padding: 10px;">
+                            <span class="input-label">محتوى الشكوى</span>
+                            <textarea type="text" rows="10"></textarea>
+                        </label>
+                    </div>
+                    
+                    <button class="button button-full" style="background-color: #20BF9F;"> مرفقات </button>
+                    <button class="button button-full" style="background-color: #20BF9F;"> ارسال </button>
+                </div>
+                
+                
+                <div ng-show="{{complaint.id}}== 3" class="list list-inset">
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label" style="padding: 10px;">اسم الطبيب</span>
+                            <input type="text" placeholder="ادخل الاسم">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label" style="padding: 10px;">اسم المستشفى إذا وجد</span>
+                            <input type="text" placeholder="ادخل الاسم">
+                        </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label" style="padding: 10px;">اسم العيادة إذا وجد</span>
+                            <input type="text" placeholder="ادخل الاسم">
+                        </label>
+                        <label class="item item-input item-stacked-label" style="padding: 10px;">
+                            <span class="input-label">رقم الكشف</span>
+                            <input type="text" placeholder="ادخل رقم الكشف">
+                        </label>
+                        <label class="item item-input item-stacked-label"  style="padding: 10px;">
+                            <span class="input-label">محتوى الشكوى</span>
+                            <textarea type="text" rows="7"></textarea>
+                        </label>
+                    </div>
+                    
+                    <button class="button button-full" style="background-color: #20BF9F;"> مرفقات </button>
+                    <button class="button button-full" style="background-color: #20BF9F;"> ارسال </button>
+                </div>
+                
+                
+            </form>
+
+        </div>
+
+
+    </ion-content>
+
+</ion-view>
